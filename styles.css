@@ -1,0 +1,174 @@
+/* GLOBAL===================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600&family=Roboto:wght@300&display=swap');
+
+:root {
+    --primary: #55418E;
+    --secondary: #5f499e;
+    --text: #E7E7E7;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: var(--primary);
+    font-family: 'Mulish', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text)
+}
+
+ul {
+    list-style: none;
+}
+
+header {
+    background: var(--secondary);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height:70px;
+    padding: 1rem;
+}
+
+.logo {
+    height: 2.1rem
+}
+
+/* MENU===================== */
+.menu {
+    font-size: 1.2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.menu a {
+    font-weight: bold;
+    display: block;
+    padding: .5rem
+}
+
+.menu a:hover {
+    color: #ffffff;
+}
+
+/* DESCRIPTION AND TEXT =====================*/
+.rockit-description {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.rockit-description img {
+    max-width:100%; 
+    width: 400px;
+    margin-right: 6rem;
+    margin-top:3rem;
+}
+
+.rockit-text h1 {
+    color: var(--text);
+    font-size: min(3.5rem, 6vw);
+    font-weight: bold;
+}
+
+.rockit-text p {
+    margin-left: 10px;
+    color: var(--text);
+    width: 80%;
+    font-size: 1.2rem;
+    font-weight: lighter;
+}
+
+/* FOOTER ===================== */
+.rockit-footer { 
+
+    position:fixed;
+    bottom:0;
+    margin-bottom: 8px;
+
+    display: flex;
+    align-items: center;
+    margin-left: .7rem;
+}
+
+footer img {
+    margin-top: 2rem;
+    height:3rem;
+}
+
+.rockit-footer-text {
+    margin-left: .3rem;
+    margin-top: 3.3rem;
+}
+
+.rockit-footer-text h2 {
+    color: var(--text);
+    opacity: 70%;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: lighter;
+}
+
+/* RESPONSIVE===================== */
+@media (max-width: 726px){
+
+    .menu{
+        display: block;
+        position: absolute;
+        width: 100%;
+        top: 70px;
+        right: 0px;
+        background: var(--secondary);
+        transition: 0.4s;
+        z-index: 1000;
+        height: 0px;
+        visibility: hidden;
+        overflow-y: hidden;
+    }
+
+    .menu a {
+        text-align: center;
+        padding: 1rem 0;
+        margin: 0 1rem;
+        border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+      }
+
+    #nav.active .menu {
+        height: calc(100vh - 70px);
+        visibility: visible;
+        overflow-y: auto;
+    }
+
+    .rockit-text {
+        margin: 0;
+        padding:0
+    }
+
+    .rockit-text p {
+        display: none;
+    }
+
+    .rockit-description{
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .rockit-description img {
+        display:flex;
+        height: 380px;
+        margin-left:75px;
+        
+    }
+
+    .rockit-description h1 {
+        margin-top: 40px; 
+    }
+}
